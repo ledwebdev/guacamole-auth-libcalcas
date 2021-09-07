@@ -3,7 +3,7 @@
 This repository contains some simple modifications made to the 
 [Guacamole CAS support](https://guacamole.apache.org/doc/gug/cas-auth.html)
 for supporting _CAS_ with [LibCal](https://www.springshare.com/libcal/). Except
-for _pom.xml_, the files would be copied to the _CAS_ directory, and the
+for _pom.xml_, the java files would be copied to the _CAS_ directory, and the
 _Guacamole_ distribution includes its own licenses:
 
 ```
@@ -40,18 +40,16 @@ identified by their _LibCal id_,
 which gets mapped to _/etc/guacamole/user-mapping.xml_ as shown:
 
 ```
-	<authorize
-	            username="00000"
-	            password="00000">
-	        <!-- ADC01 -->
-	        <connection name="ADC 01">
-	            <protocol>rdp</protocol>
-	            <param name="hostname">adc01.somewhere.org</param>
-	            <param name="port">3389</param>
-	            <param name="username">modify</param>
-	            <param name="password">modify</param>
-	            <param name="ignore-cert">true</param>
-	        </connection>
+<authorize username="00000" password="00000">
+    <!-- WK01 -->
+    <connection name="WK 01">
+        <protocol>rdp</protocol>
+        <param name="hostname">wk01.somewhere.org</param>
+        <param name="port">3389</param>
+        <param name="username">modify</param>
+        <param name="password">modify</param>
+        <param name="ignore-cert">true</param>
+    </connection>
 </authorize>
 ```
 
